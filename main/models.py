@@ -1,3 +1,4 @@
+
 from django.db import models
 
 # Create your models here.
@@ -55,18 +56,6 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.name
 
-class Resume(models.Model):
-    job_title = models.CharField(max_length=100)
-    company = models.CharField(max_length=100)
-    location = models.CharField(max_length=100)
-    start_year = models.PositiveIntegerField()
-    end_year = models.PositiveIntegerField(blank=True, null=True)
-    description = models.TextField()
-
-    def __str__(self):
-        return f"{self.job_title} at {self.company} ({self.start_year} - {self.end_year or 'Present'})"
-
-
 class OwnerContactInfo(models.Model):
     address = models.TextField()
     email = models.EmailField()
@@ -114,3 +103,13 @@ class Education(models.Model):
 
     def __str__(self):
         return f"{self.degree} in {self.field_of_study} from {self.institution}"
+
+class CV(models.Model):
+    # Image preview of the CV
+    image = models.ImageField(upload_to='cv_images/')
+    
+    # PDF version of the CV
+    pdf = models.FileField(upload_to='site_pdfs/')
+    
+    def __str__(self):
+        return "CV"

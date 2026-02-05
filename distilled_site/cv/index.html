@@ -1,14 +1,13 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <title>CV</title>
 
   <!-- Favicons -->
-  {% comment %} <link rel="icon" href="{% static 'img/favicon.png' %}">
-  <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}"> {% endcomment %}
+  
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
 
   <!-- Your main stylesheet -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body class="starter-page-page">
@@ -32,18 +31,18 @@
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename mb-0">𝘚𝘶𝘮𝘢𝘯</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'project' %}">Projects</a></li>
-          <li><a href="{% url 'education' %}">Education</a></li>
-          <li><a href="{% url 'cv' %}">Download CV</a></li>
-          <li><a href="{% url 'contact'%}">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/project/">Projects</a></li>
+          <li><a href="/education/">Education</a></li>
+          <li><a href="/cv/">Download CV</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -60,7 +59,55 @@
   <!-- End Header -->
 
   <main class="main">
-    {% block content %}{% endblock %}
+    
+<main class="main">
+
+<!-- CV Section -->
+<section id="cv" class="cv section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Curriculum Vitae</h2>
+    <p>Preview and download my CV in image or PDF format.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+        
+        <div class="col-lg-6 col-md-8 mb-4">
+          <div class="cv-card text-center p-3 shadow-sm rounded">
+
+            <!-- CV Image Preview -->
+            
+            <img src="/media/cv_images/Blue_Simple_Professional_CV_Resume.png" alt="CV Preview" class="img-fluid mb-3" style="border-radius: 8px; max-height: 500px; object-fit: contain;">
+            
+
+            <!-- Download Buttons -->
+            <div class="cv-buttons mt-3">
+              
+              <a href="/media/cv_images/Blue_Simple_Professional_CV_Resume.png" download class="btn btn-primary me-2">Download Image</a>
+              
+              
+              <a href="/media/site_pdfs/Professional_CV_-_Suman_Sharma_1.pdf" download class="btn btn-success">Download PDF</a>
+              
+            </div>
+
+          </div>
+        </div>
+        
+
+      </div>
+    
+
+  </div>
+
+</section><!-- /CV Section -->
+
+</main>
+
   </main>
 
   <!-- ======= Footer ======= -->
@@ -84,7 +131,7 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
-  <script src="{% static 'scripts/app.js' %}"></script>
+  <script src="/static/scripts/app.js"></script>
 
   <!-- Vendor JS -->
   <script src="https://cdn.jsdelivr.net/npm/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>

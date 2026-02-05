@@ -1,14 +1,13 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <title>Contact</title>
 
   <!-- Favicons -->
-  {% comment %} <link rel="icon" href="{% static 'img/favicon.png' %}">
-  <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}"> {% endcomment %}
+  
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
 
   <!-- Your main stylesheet -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body class="starter-page-page">
@@ -32,18 +31,18 @@
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename mb-0">𝘚𝘶𝘮𝘢𝘯</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'project' %}">Projects</a></li>
-          <li><a href="{% url 'education' %}">Education</a></li>
-          <li><a href="{% url 'cv' %}">Download CV</a></li>
-          <li><a href="{% url 'contact'%}">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/project/">Projects</a></li>
+          <li><a href="/education/">Education</a></li>
+          <li><a href="/cv/">Download CV</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -60,7 +59,134 @@
   <!-- End Header -->
 
   <main class="main">
-    {% block content %}{% endblock %}
+    
+    <!-- Contact Section -->
+<section id="contact" class="contact section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-5">
+
+        <div class="info-wrap">
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+              <h3>Address</h3>
+              <p>Pokhara -2 , Archalbot</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3>Call Us</h3>
+              <p>9805145091</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3>Email Us</h3>
+              <p>jrsuman2001@gmail.com</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28120.84440271121!2d83.94408699426367!3d28.234475837648855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995945ce2b7aa85%3A0xf348006f1564321!2sArchalbot%2033700!5e0!3m2!1sen!2snp!4v1770213491693!5m2!1sen!2snp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          
+        </div>
+      </div>
+
+          <div class="col-lg-7">
+           
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Django Form</title>
+<style>
+    
+button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+button[type="submit"]:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+      }
+}
+</style>
+
+  </head>
+  <body>
+    <form method="post">
+      <input type="hidden" name="csrfmiddlewaretoken" value="jSEqFxdRDR4kHKegmhfveUmtA8G4ynuGNNFJlAl9tAWTvJgPL7yoo7cLKcjv7MbA">
+      <p>
+    <label for="name-field">Name:</label>
+    <input type="text" name="name" class="form-control" id="name-field" maxlength="100" required>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="email-field">Email:</label>
+    <input type="email" name="email" class="form-control" id="email-field" maxlength="254" required>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="subject-field">Subject:</label>
+    <input type="text" name="subject" class="form-control" id="subject-field" maxlength="200" required>
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="message-field">Message:</label>
+    <textarea name="message" cols="40" rows="10" class="form-control" id="message-field" required>
+</textarea>
+    
+    
+      
+    
+  </p>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
+
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+    
+<script src="https://cdn.jsdelivr.net/npm/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
+
+
   </main>
 
   <!-- ======= Footer ======= -->
@@ -84,7 +210,7 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
-  <script src="{% static 'scripts/app.js' %}"></script>
+  <script src="/static/scripts/app.js"></script>
 
   <!-- Vendor JS -->
   <script src="https://cdn.jsdelivr.net/npm/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>

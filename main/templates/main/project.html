@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}project{% endblock %}
+
+{% block content %}
+<main class="main">
+
+<!-- Resume Section -->
+<section id="resume" class="resume section">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+        <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Personal Project & Work</h2>
+      </div><!-- End Section Title -->
+
+        {% for project in projects %}
+        <div class="resume-item d-flex flex-column flex-md-row mb-4 align-items-start" style="gap: 1.5rem;">
+          
+          <!-- Image on the left (smaller size) -->
+          {% if project.image %}
+          <div class="project-image" style="flex: 0 0 150px; min-width: 150px;">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          </div>
+          {% endif %}
+
+          <!-- Details on the right -->
+          <div class="project-details" style="flex: 1; min-width: 200px;">
+            <h4>{{ project.title }}</h4>
+            {% if project.github_link %}
+              <p><a href="{{ project.github_link }}" target="_blank">GitHub Link</a></p>
+            {% endif %}
+            {% if project.live_link %}
+              <p><a href="{{ project.live_link }}" target="_blank">Live Project</a></p>
+            {% endif %}
+            <p>{{ project.description }}</p>
+          </div>
+
+        </div>
+        <hr>
+        {% empty %}
+        <p>No records found.</p>
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- /Resume Section -->
+
+</main>
+{% endblock %}

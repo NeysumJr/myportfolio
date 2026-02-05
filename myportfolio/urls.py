@@ -20,10 +20,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('main.urls')),  # Include the main app's URLs
+    path("admin/", admin.site.urls),  # Keep admin accessible locally
+    path("", include("main.urls")),   # Main app URLs (static distill inside main/urls.py)
 ]
 
-# Serve media files in development mode
+# Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,14 +1,13 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <title>project</title>
 
   <!-- Favicons -->
-  {% comment %} <link rel="icon" href="{% static 'img/favicon.png' %}">
-  <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}"> {% endcomment %}
+  
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
 
   <!-- Your main stylesheet -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body class="starter-page-page">
@@ -32,18 +31,18 @@
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename mb-0">𝘚𝘶𝘮𝘢𝘯</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'project' %}">Projects</a></li>
-          <li><a href="{% url 'education' %}">Education</a></li>
-          <li><a href="{% url 'cv' %}">Download CV</a></li>
-          <li><a href="{% url 'contact'%}">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/project/">Projects</a></li>
+          <li><a href="/education/">Education</a></li>
+          <li><a href="/cv/">Download CV</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -60,7 +59,78 @@
   <!-- End Header -->
 
   <main class="main">
-    {% block content %}{% endblock %}
+    
+<main class="main">
+
+<!-- Resume Section -->
+<section id="resume" class="resume section">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+        <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Personal Project & Work</h2>
+      </div><!-- End Section Title -->
+
+        
+        <div class="resume-item d-flex flex-column flex-md-row mb-4 align-items-start" style="gap: 1.5rem;">
+          
+          <!-- Image on the left (smaller size) -->
+          
+          <div class="project-image" style="flex: 0 0 150px; min-width: 150px;">
+            <img src="/media/projects/ChatGPT_Image_Feb_3_2026_04_03_53_PM_trl2EIa.png" alt="E-Attendance" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          </div>
+          
+
+          <!-- Details on the right -->
+          <div class="project-details" style="flex: 1; min-width: 200px;">
+            <h4>E-Attendance</h4>
+            
+              <p><a href="https://github.com/NeysumJr/E_Attendance.git" target="_blank">GitHub Link</a></p>
+            
+            
+            <p>A web-based system for managing student attendance digitally. It allows administrators to manage academic data, teachers to record attendance and generate reports, and students to view their attendance. Built with PHP, MySQL, Bootstrap, and JavaScript, featuring OTP-based login and automated alerts.</p>
+          </div>
+
+        </div>
+        <hr>
+        
+        <div class="resume-item d-flex flex-column flex-md-row mb-4 align-items-start" style="gap: 1.5rem;">
+          
+          <!-- Image on the left (smaller size) -->
+          
+          <div class="project-image" style="flex: 0 0 150px; min-width: 150px;">
+            <img src="/media/projects/Gemini_Generated_Image_cmrgeccmrgeccmrg_ZMPEMbj.png" alt="ClassPlus" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          </div>
+          
+
+          <!-- Details on the right -->
+          <div class="project-details" style="flex: 1; min-width: 200px;">
+            <h4>ClassPlus</h4>
+            
+              <p><a href="https://github.com/NeysumJr/ClassPlusFinal.git" target="_blank">GitHub Link</a></p>
+            
+            
+            <p>ClassPlus is a digital classroom platform that combines attendance, virtual classes, notes, and assignments in one place. Teachers manage sessions, share learning materials, and track student progress, while students join classes, submit assignments, and view attendance. Built with PHP, MySQL, Bootstrap, and JavaScript for a smooth learning experience.</p>
+          </div>
+
+        </div>
+        <hr>
+        
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- /Resume Section -->
+
+</main>
+
   </main>
 
   <!-- ======= Footer ======= -->
@@ -84,7 +154,7 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
-  <script src="{% static 'scripts/app.js' %}"></script>
+  <script src="/static/scripts/app.js"></script>
 
   <!-- Vendor JS -->
   <script src="https://cdn.jsdelivr.net/npm/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>

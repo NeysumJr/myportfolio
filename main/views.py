@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import About, Project, Skill, Stat, Testimonial, Resume, Education, OwnerContactInfo, VisitorMessage, SiteImage
+from .models import About, Project, Skill, Stat, Testimonial, Education, OwnerContactInfo, VisitorMessage, SiteImage,CV
 from .forms import VisitorMessages
 
 # Create your views here.
@@ -38,16 +38,23 @@ def about(request):
     }
 
     return render(request, template_name, context)
+def project(request):
+    template_name = 'main/project.html'
 
-def resume(request):
-    template_name = 'main/resume.html'
-    resumes = Resume.objects.all()  # ✅ FIXED: Get queryset, not class
+    projects = Project.objects.all()  # Get all projects
+    if not projects.exists():
+        messages.warning(request, 'No projects found.')
+
     context = {
-        'title': 'Resume',
-        'description': 'View my professional experience and qualifications.',
-        'resumes': resumes,
+        'title': 'Projects',
+        'description': 'Explore my projects, work, and experiments.',
+        'projects': projects,
+        'about': about,
+        'contact': contact,
     }
+
     return render(request, template_name, context)
+    
 def education(request):
     template_name = 'main/education.html'
     educations = Education.objects.all ()  # ✅ FIXED: Get queryset, not class
@@ -69,20 +76,20 @@ def education(request):
         'contact': Contact,
     }
     return render(request, template_name, context)
-def portfolio(request):
-    template_name = 'main/portfolio.html'
+def cv(request):
+    template_name = 'main/cv.html'
+    
+    # Get all CV objects from database
+    cvs = CV.objects.all()
+    
     context = {
-        'title': 'Portfolio',
-        'description': 'Check out my projects and works.'
+        'title': 'CV',
+        'description': 'Check out my CV.',
+        'cvs': cvs,  # pass queryset, not the class
     }
+    
     return render(request, template_name, context)
-def blog(request):
-    template_name = 'main/blog.html'
-    context = {
-        'title': 'Blog',
-        'description': 'Read my latest articles and thoughts.'
-    }
-    return render(request, template_name, context)
+
 def contact(request):
     template_name = 'main/contact.html'
     contact = OwnerContactInfo.objects.first()
