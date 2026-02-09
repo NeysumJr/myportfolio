@@ -1,16 +1,16 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
   "builds": [
     {
-      "src": "myportfolio/wsgi.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "staticfiles/**/*",
+      "src": "distilled_site/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/staticfiles/$1" },
-    { "src": "/(.*)", "dest": "myportfolio/wsgi.py" }
+    {
+      "src": "/(.*)",
+      "dest": "distilled_site/$1"
+    }
   ]
 }
